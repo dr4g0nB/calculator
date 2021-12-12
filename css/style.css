@@ -1,0 +1,127 @@
+:root {
+  --cool-gray: #8c92ac;
+  --affair-purple: #6f4685;
+  --white-smoke: #f5f5f5;
+  --timberwolf: #dbd7d2;
+  --pink-gray: #E7DADA;
+  --thistle-purple: #d8bfd8;
+  --light-purple: #bb9ebb;
+  --pale-purple: #FAE6FA;
+  --not-pale-purple: #f5d8f5;
+  --slate-blue: #483D8B;
+  --multi: linear-gradient(#8A2387, #E94057, #F27121);
+}
+
+html {
+  font-size: 150%;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calculator {
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0);
+  border-radius: 0.5em;
+  overflow: hidden;
+}
+
+.calculator__display {
+  background-color: var(--slate-blue);
+  color: white;
+  width:  16.25rem;
+  /*if the left and right have more value, it tends to look more balance*/
+  padding: 0.75rem 1rem;
+  text-align: right;
+  font-size: calc(1rem * 1.2 * 1.2);
+}
+
+.calculator__keys {
+  background: var(--timberwolf);
+  height: 10.25rem;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-template-areas: 
+    ". . . ."
+    "seven eight nine equal"
+    "four five six equal"
+    "one two three equal"
+    "zero decimal clear equal";
+  grid-gap: 2px;
+}
+
+.calculator__keys > button {
+  border: 0;
+}
+
+.one {
+  grid-area: one;
+}
+.two {
+  grid-area: two;
+}
+.three {
+  grid-area: three;
+}
+.four {
+  grid-area: four;
+}
+.five {
+  grid-area: five;
+}
+.six {
+  grid-area: six;
+}
+.seven {
+  grid-area: seven;
+}
+.eight {
+  grid-area: eight;
+}
+.nine {
+  grid-area: nine;
+}
+.zero {
+  grid-area: zero;
+}
+.decimal {
+  grid-area: decimal;
+}
+.clear {
+  grid-area: clear;
+}
+.equal {
+  grid-area: equal;
+  background: var(--thistle-purple);
+}
+.equal:hover,
+.equal:focus,
+.operator:hover,
+.operator:focus {
+  background-color: var(--light-purple);
+}
+.number:focus,
+.number:hover {
+  background-color: var(--not-pale-purple);
+}
+.number{
+  background: var(--pale-purple);
+}
+.operator {
+  background: var(--thistle-purple);
+}
+.operator:focus,
+.number:focus,
+.equal:focus {
+  outline: 2px solid var(--slate-blue);
+}
+.operator:active,
+.number:active {
+  background: var(--light-purple);
+}
